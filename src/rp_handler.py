@@ -89,7 +89,11 @@ def run_whisper_job(job):
             logprob_threshold=job_input["logprob_threshold"],
             no_speech_threshold=job_input["no_speech_threshold"],
             enable_vad=job_input["enable_vad"],
-            word_timestamps=job_input["word_timestamps"]
+            word_timestamps=job_input["word_timestamps"],
+            highlight_words=job_input["highlight_words"],
+            max_line_count=job_input["max_line_count"],
+            max_line_width=job_input["max_line_width"],
+            max_words_per_line=job_input["max_words_per_line"]
         )
 
     with rp_debugger.LineTimer('cleanup_step'):

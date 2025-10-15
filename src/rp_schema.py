@@ -104,4 +104,24 @@ INPUT_VALIDATIONS = {
         'required': False,
         'default': False
     },
+    'highlight_words': {
+        'type': bool,
+        'required': False,
+        'default': False
+    },
+    'max_line_count': {
+        'type': int,
+        'required': False,
+        'default': None
+    },
+    'max_line_width': {
+        'type': int,
+        'required': False,
+        'default': None
+    },
+    'max_words_per_line': {
+        'type': int,
+        'required': False,
+        'default': None
+    },
 }

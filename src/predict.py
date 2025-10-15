@@ -65,6 +65,10 @@ class Predictor:
         no_speech_threshold=0.6,
         enable_vad=False,
         word_timestamps=False,
+        highlight_words=False,
+        max_line_count=None,
+        max_line_width=None,
+        max_words_per_line=None,
     ):
         """
         Run a single prediction on the model, loading/unloading models as needed.
@@ -153,6 +157,10 @@ class Predictor:
                 without_timestamps=False,
                 max_initial_timestamp=1.0,
                 word_timestamps=word_timestamps,
+                highlight_words=highlight_words,
+                max_line_count=max_line_count,
+                max_line_width=max_line_width,
+                max_words_per_line=max_words_per_line,
                 vad_filter=enable_vad,
             )
         )
