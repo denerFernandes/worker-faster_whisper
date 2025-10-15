@@ -38,7 +38,7 @@
 | `patience`                          | float | Optional patience value to use in beam decoding. Default: None                                                                                                         |
 | `length_penalty`                    | float | Optional token length penalty coefficient (alpha). Default: None                                                                                                       |
 | `suppress_tokens`                   | str   | Comma-separated list of token ids to suppress during sampling. Default: "-1"                                                                                           |
-| `initial_prompt`                    | str   | Optional text to provide as a prompt for the first window. Default: None                                                                                               |
+| `initial_prompt`                    | str   | Optional text to provide as a prompt for the first  window. Default: None                                                                                               |
 | `condition_on_previous_text`        | bool  | If True, provide the previous output of the model as a prompt for the next window. Default: True                                                                       |
 | `temperature_increment_on_fallback` | float | Temperature to increase when falling back when the decoding fails. Default: 0.2                                                                                        |
 | `compression_ratio_threshold`       | float | If the gzip compression ratio is higher than this value, treat the decoding as failed. Default: 2.4                                                                    |
