@@ -69,7 +69,7 @@ The following inputs can be used for testing the model:
 }
 ```
 
-producing an output like this: 
+producing an output like this:
 
 ```json
 {
