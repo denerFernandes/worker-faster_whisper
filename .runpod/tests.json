@@ -17,7 +17,7 @@
         "logprob_threshold": -1,
         "no_speech_threshold": 0.6
       },
-      "timeout": 10000
+      "timeout": 15000
     }
   ],
   "config": {
@@ -28,7 +28,14 @@
       "12.6",
       "12.5",
       "12.4",
-      "12.3"
+      "12.3",
+      "11.8"
+    ],
+    "fallbackGpuTypes": [
+      "NVIDIA RTX A6000",
+      "NVIDIA RTX A5000", 
+      "NVIDIA GeForce RTX 3090",
+      "NVIDIA GeForce RTX 4080"
     ]
   }
 }
