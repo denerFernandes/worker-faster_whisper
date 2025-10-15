@@ -46,6 +46,10 @@
 | `no_speech_threshold`               | float | If the probability of the token is higher than this value, consider the segment as silence. Default: 0.6                                                               |
 | `enable_vad`                        | bool  | If True, use the voice activity detection (VAD) to filter out parts of the audio without speech. This step is using the Silero VAD model. Default: False               |
 | `word_timestamps`                   | bool  | If True, include word timestamps in the output. Default: False                                                                                                         |
+| `highlight_words`                   | bool  | If True, highlight words in the output with timestamps. Default: False                                                                                                 |
+| `max_line_count`                    | int   | Maximum number of lines per segment for subtitle formatting. Default: None                                                                                             |
+| `max_line_width`                    | int   | Maximum character width per line for subtitle formatting. Default: None                                                                                                |
+| `max_words_per_line`                | int   | Maximum number of words per line for subtitle formatting. Default: None                                                                                                |
 
 ### Example
 
@@ -55,7 +59,12 @@ The following inputs can be used for testing the model:
 {
   "input": {
     "audio": "https://github.com/runpod-workers/sample-inputs/raw/main/audio/gettysburg.wav",
-    "model": "turbo"
+    "model": "turbo",
+    "word_timestamps": true,
+    "highlight_words": true,
+    "max_line_count": 2,
+    "max_line_width": 50,
+    "max_words_per_line": 8
   }
 }
 ```
@@ -75,7 +84,27 @@ producing an output like this:
       "temperature": 0.1,
       "avg_logprob": -0.8348079785480325,
       "compression_ratio": 0.5789473684210527,
-      "no_speech_prob": 0.1453857421875
+      "no_speech_prob": 0.1453857421875,
+      "words": [
+        {
+          "word": "Hello",
+          "start": 0.11,
+          "end": 0.45,
+          "probability": 0.99
+        },
+        {
+          "word": "and",
+          "start": 0.45,
+          "end": 0.65,
+          "probability": 0.98
+        },
+        {
+          "word": "welcome!",
+          "start": 0.65,
+          "end": 3.11,
+          "probability": 0.97
+        }
+      ]
     }
   ],
   "detected_language": "en",
@@ -83,6 +112,26 @@ producing an output like this:
   "translation": null,
   "device": "cuda",
   "model": "turbo",
-  "translation_time": 0.3796223163604736
+  "translation_time": 0.3796223163604736,
+  "word_timestamps_list": [
+    {
+      "word": "Hello",
+      "start": 0.11,
+      "end": 0.45,
+      "probability": 0.99
+    },
+    {
+      "word": "and",
+      "start": 0.45,
+      "end": 0.65,
+      "probability": 0.98
+    },
+    {
+      "word": "welcome!",
+      "start": 0.65,
+      "end": 3.11,
+      "probability": 0.97
+    }
+  ]
 }
 ```
